@@ -1,0 +1,77 @@
+{% extends 'base.html'%}
+{% block title %}MediVibe-Home{% endblock title%}
+{% load static %}
+
+
+{% block style %}
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    input{
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .submit_button {
+        padding: 10px;
+        background: #12133d !important;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .submit_button:hover {
+        background: white !important;
+        color: #12133d;
+        border: 2px solid #12133d;
+    }
+</style>
+{% endblock style %}
+
+{% block nav_list %}
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'home' %}">About</a></li>
+    <li><a href="{% url 'home' %}">Services</a></li>
+    <li><a href="{% url 'drug_service'%}" class="active">Drug Store</a></li>
+    <li><a href="{% url 'home' %}">Contact</a></li>
+{% endblock nav_list %}
+
+{% block content %}
+<section id="featured-services" class="featured-services section">
+    <div class="container"> <!-- Wrap everything inside a container -->
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12"> <!-- Adjust for different screen sizes -->
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="https://via.placeholder.com/200" class="img-fluid rounded mb-3" alt="Image 1">
+                        <h2>Upload Your Prescription</h2>
+
+                        <form action="" method="post">
+                            <input type="file" name="image" accept="image/*" required class="form-control mb-2">
+                            <button type="submit" class="submit_button">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="https://via.placeholder.com/200" class="img-fluid rounded mb-3" alt="Image 2">
+                        <h3>Search By Name</h3>
+
+                        <form action="" method="post">
+                            <input type="text" name="image" required class="form-control mb-2">
+                            <button type="submit" class="submit_button">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,288 @@
+{% extends 'base.html'%}
+{% block title %}MediVibe-Home{% endblock title%}
+{% load static %}
+
+{% block nav_list %}
+    <li><a href="{% url 'home' %}" class="active">Home</a></li>
+    <li><a href="{% url 'home' %}">About</a></li>
+    <li><a href="{% url 'home' %}">Services</a></li>
+    <li><a href="{% url 'drug_service'%}">Drug Store</a></li>
+    <li><a href="{% url 'home' %}">Contact</a></li>
+{% endblock nav_list %}
+
+{% block content %}
+  <main class="main">
+
+    <!-- Home Section -->
+    <section id="hero" class="hero section">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel_1.jpg' %}" alt="">
+          <div class="container">
+            <h2>Online Pharmacy Store Access</h2>
+            <p>Easily find and order medicines from nearby pharmacies. Upload your prescription, compare prices, and choose a pharmacy within 10km for delivery or pickup. Stay safe with hassle-free online ordering!</p>
+
+            
+            <a href="#about" class="btn-get-started">Read More</a>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel-2.jpg' %}" alt="">
+          <div class="container">
+            <h2>E-Channeling</h2>
+            <p>Book doctor appointments anytime, anywhere! Search by specialty, view doctor profiles, and schedule video or in-person consultations with ease. Medivibe connects you with top healthcare professionals instantly.</p>
+            <a href="#about" class="btn-get-started">Read More</a>
+          </div>
+        </div>
+        
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel_3.jpg' %}" alt="">
+          <div class="container">
+            <h2>Emergency Services</h2>
+            <p>Get immediate medical help when it matters most! Access ambulance booking, emergency hotline support, and nearby hospital locators with a tap. Medivibe ensures quick and reliable emergency response.</p>
+            <a href="#about" class="btn-get-started">Read More</a>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+
+    </section><!-- /home Section -->
+    
+
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="fas fa-thermometer icon"></i></div>
+              <h4><a href="{% url 'drug_service'%}" class="stretched-link">Find Your Prescription</a></h4>
+              <p>Upload your doctor's prescription or enter the medicine name to quickly 
+                locate the nearest pharmacy with stock availability within 10km.</p>
+            </div>
+          </div><!-- End Service Item -->
+          
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="fas fa-heartbeat icon"></i></div>
+              <h4><a href="" class="stretched-link">E-Channeling Services</a></h4>
+              <p>Book an appointment with certified healthcare professionals through our 
+                e-channeling service and get medical advice from the comfort of your home.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="fas fa-pills icon"></i></div>
+              <h4><a href="" class="stretched-link">Emergency Services</a></h4>
+              <p>In case of an emergency, connect instantly with medical professionals and
+                 get immediate support for urgent healthcare needs.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section accent-background">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>In an emergency? Need help now?</h3>
+              <p>Get immediate medical help when it matters most! Access ambulance booking, emergency hotline support, and nearby hospital locators with a tap. Medivibe ensures quick and reliable emergency response.</p>
+              <a class="cta-btn" href="#appointment" >SOS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About Us<br></h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+            <img src="{% static 'assets/img/logo.png' %}" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+          </div>
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+            <h3>Bridging the Gap Between Patients and Pharmacies – Fast, Reliable, and Convenient Medical Solutions!</h3>
+            <p class="fst-italic">
+              We are revolutionizing the way you access medicine and healthcare services with our innovative drug ordering platform. Our system allows customers to conveniently upload their doctor's prescription or enter the medicine name to find the nearest pharmacy that stocks it within a 10km radius.
+            </p>
+            <br>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> <span>Find pharmacies near you that have the required medicine in stock.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Choose a pharmacy and visit their online store for seamless ordering.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Access e-channeling services to consult healthcare professionals online.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Get immediate assistance through our emergency medical services.</span></li>
+            </ul>
+            <br>
+            <p>
+              Our goal is to make healthcare more accessible, efficient, and reliable, ensuring you receive the care you need when you need it most.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <br>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-user-md flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Doctors</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="far fa-hospital flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hospitals</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-flask flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Pharmacies</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>If there any issue,contact us using this form or our hotline</p>
+      </div>
+
+      <!-- <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
+        <iframe style="border:0; width: 100%; height: 370px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>End Google Maps -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 ">
+            <div class="row gy-4">
+
+              <div class="col-lg-12">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Address</h3>
+                  <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Call Us</h3>
+                  <p>+94754671931</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>support@medivibe.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="4" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="error-message"></div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+  {% endblock content %}
