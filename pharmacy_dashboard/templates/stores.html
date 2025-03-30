@@ -1,0 +1,128 @@
+{% extends 'base_.html'%}
+{% block content %}
+
+
+<div class="card mb-4 p-3">
+    <a href="{% url 'product_insert' %}" class="btn btn-primary btn-lg btn-block mb-4 mt-4">
+        Enter New Product
+    </a>
+    
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Products Details
+    </div>
+    <div class="card-body">
+
+        <!-- Table Should be develop -->
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Available Qte</th>
+                    <th>Prescription Need</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Available Qte</th>
+                    <th>Prescription Need</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>xxxxxxx</td>
+                    <td>xxxxxxx</td>
+                    <td>Category 1</td>
+                    <td>LKR 0000</td>
+                    <td>50</td>
+                    <td><button type="button" class="btn btn-success">No Need</button></td>
+                    <td><button type="button" class="btn btn-info">Details</button></td>
+                </tr>
+                <tr>
+                    <td>xxxxxxx</td>
+                    <td>xxxxxxx</td>
+                    <td>Category 1</td>
+                    <td>LKR 0000</td>
+                    <td>50</td>
+                    <td><button type="button" class="btn btn-danger">Needed</button></td>
+                    <td><button type="button" class="btn btn-info">Details</button></td>
+                </tr>
+                <tr>
+                    <td>xxxxxxx</td>
+                    <td>xxxxxxx</td>
+                    <td>Category 1</td>
+                    <td>LKR 0000</td>
+                    <td>50</td>
+                    <td><button type="button" class="btn btn-danger">Needed</button></td>
+                    <td><button type="button" class="btn btn-info">Details</button></td>
+                </tr>
+                <tr>
+                    <td>xxxxxxx</td>
+                    <td>xxxxxxx</td>
+                    <td>Category 1</td>
+                    <td>LKR 0000</td>
+                    <td>50</td>
+                    <td><button type="button" class="btn btn-danger">Needed</button></td>
+                    <td><button type="button" class="btn btn-info">Details</button></td>
+                </tr>
+                <tr>
+                    <td>xxxxxxx</td>
+                    <td>xxxxxxx</td>
+                    <td>Category 1</td>
+                    <td>LKR 0000</td>
+                    <td>50</td>
+                    <td><button type="button" class="btn btn-success">No Need</button></td>
+                    <td><button type="button" class="btn btn-info">Details</button></td>
+                </tr>
+                <tr>
+                    <td>xxxxxxx</td>
+                    <td>xxxxxxx</td>
+                    <td>Category 1</td>
+                    <td>LKR 0000</td>
+                    <td>50</td>
+                    <td><button type="button" class="btn btn-success">No Need</button></td>
+                    <td><button type="button" class="btn btn-info">Details</button></td>
+                </tr>
+                <tr>
+                    <td>xxxxxxx</td>
+                    <td>xxxxxxx</td>
+                    <td>Category 1</td>
+                    <td>LKR 0000</td>
+                    <td>50</td>
+                    <td><button type="button" class="btn btn-success">No Need</button></td>
+                    <td><button type="button" class="btn btn-info">Details</button></td>
+                </tr>
+                <tr>
+                    <td>xxxxxxx</td>
+                    <td>xxxxxxx</td>
+                    <td>Category 1</td>
+                    <td>LKR 0000</td>
+                    <td>50</td>
+                    <td><button type="button" class="btn btn-success">No Need</button></td>
+                    <td><button type="button" class="btn btn-info">Details</button></td>
+                </tr>
+                <tr>
+                    <td>xxxxxxx</td>
+                    <td>xxxxxxx</td>
+                    <td>Category 1</td>
+                    <td>LKR 0000</td>
+                    <td>50</td>
+                    <td><button type="button" class="btn btn-success">No Need</button></td>
+                    <td><button type="button" class="btn btn-info">Details</button></td>
+                </tr>
+                
+            </tbody>
+        </table> 
+    </div>
+</div>
+
+{% endblock content %}

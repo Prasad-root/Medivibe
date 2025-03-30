@@ -1,0 +1,52 @@
+{% extends 'base_.html'%}
+{% block content %}
+
+<br>
+<center><h1>Product Insert</h1></center>
+
+<section class="pt-5">
+<form method="post" enctype="multipart/form-data" class="container p-4 shadow rounded bg-light">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+        <label class="form-label">Product Name</label>
+        {{ product_creation_form.product_name }}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        {{ product_creation_form.category }}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        {{ product_creation_form.description }}
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Price</label>
+            {{ product_creation_form.price }}
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Available Quantity</label>
+            {{ product_creation_form.available_quantity }}
+        </div>
+    </div>
+
+    <div class="form-check mb-3">
+        {{ product_creation_form.is_prescription_needed }}
+        <label class="form-check-label">Requires Prescription</label>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Product Image</label>
+        {{ product_creation_form.product_image }}
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Submit Product</button>
+</form>
+</section>
+
+
+{% endblock content %}
