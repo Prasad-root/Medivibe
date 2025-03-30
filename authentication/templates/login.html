@@ -1,4 +1,4 @@
-{% extends 'base.html'%}
+{% extends '_base.html'%}
 {% load static %}
 
 {% block content %}
@@ -13,18 +13,32 @@
     </div>
 
     <div class="card-body">
-        <form>
+        
+        {% if messages %}
+            <ul class="messages" >
+                {% for message in messages %}
+                    {% if "error" in message.tags %}
+                        <li class="alert alert-danger">Invalid username or password.</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
             <div class="form-floating mb-3">
-                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                <input class="form-control" id="inputEmail" type="email" name="username" placeholder="name@example.com" value="{{ form.username.value|default_if_none:'' }}" required/>
                 <label for="inputEmail">Email address</label>
             </div>
+    
             <div class="form-floating mb-3">
-                <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
+                <input class="form-control" id="inputPassword" type="password" name="password" placeholder="Password" required/>
                 <label for="inputPassword">Password</label>
             </div>
+    
             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                 <a class="small" href="password.html">Forgot Password?</a>
-                <a class="btn btn-primary" href="index.html" style="background-color: #212529;padding: 10px 20px;">Login</a>
+                <button class="btn btn-primary" type="submit" style="background-color: #212529;padding: 10px 20px;">Login</button>
             </div>
         </form>
     </div>
