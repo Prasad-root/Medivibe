@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+def catelog(request):
+    return render(request,'catelog.html')
+
+def product_view(request,product_id):
+    return render(request,'product_view.html')
