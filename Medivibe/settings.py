@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_site.apps.MainSiteConfig',
     'authentication.apps.AuthenticationConfig',
-    'pharmacy_dashboard.apps.PharmacyDashboardConfig'
+    'pharmacy_dashboard.apps.PharmacyDashboardConfig',
+    'store.apps.StoreConfig'
 ]
 
 MIDDLEWARE = [
@@ -62,6 +63,7 @@ TEMPLATES = [
             os.path.join(BASE_DIR,'authentication/templates'),
             os.path.join(BASE_DIR,'main_site/templates'),
             os.path.join(BASE_DIR,'pharmacy_dashboard/templates'),
+            os.path.join(BASE_DIR,'store/templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -128,6 +130,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'main_site/static'),
     os.path.join(BASE_DIR,'pharmacy_dashboard/static'),
     os.path.join(BASE_DIR,'authentication/static'),
+    os.path.join(BASE_DIR,'store/static')
 ]
 
 # Default primary key field type
