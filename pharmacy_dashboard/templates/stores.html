@@ -3,6 +3,12 @@
 
 
 <div class="card mb-4 p-3">
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+       {{message}}
+    </div>
+    {% endfor %}
+
     <a href="{% url 'product_insert' %}" class="btn btn-primary btn-lg btn-block mb-4 mt-4">
         Enter New Product
     </a>
@@ -38,87 +44,27 @@
                 </tr>
             </tfoot>
             <tbody>
+                {% for product in product_details %}
                 <tr>
-                    <td>xxxxxxx</td>
-                    <td>xxxxxxx</td>
-                    <td>Category 1</td>
-                    <td>LKR 0000</td>
-                    <td>50</td>
-                    <td><button type="button" class="btn btn-success">No Need</button></td>
-                    <td><button type="button" class="btn btn-info">Details</button></td>
+                    <td>{{product.product_id}}</td>
+                    <td>{{product.product_name}}</td>
+                    <td>{{product.category}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.available_quantity}}</td>
+
+                    <td>
+                        {% if product.is_prescription_needed %}
+                            <button type="button" class="btn btn-danger">Needed</button>
+                        {% else %}
+                            <button type="button" class="btn btn-success">No Need</button>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a type="button" class="btn btn-info" href="{% url 'product_update' product.product_id %}">Details</a>
+                    </td>
                 </tr>
-                <tr>
-                    <td>xxxxxxx</td>
-                    <td>xxxxxxx</td>
-                    <td>Category 1</td>
-                    <td>LKR 0000</td>
-                    <td>50</td>
-                    <td><button type="button" class="btn btn-danger">Needed</button></td>
-                    <td><button type="button" class="btn btn-info">Details</button></td>
-                </tr>
-                <tr>
-                    <td>xxxxxxx</td>
-                    <td>xxxxxxx</td>
-                    <td>Category 1</td>
-                    <td>LKR 0000</td>
-                    <td>50</td>
-                    <td><button type="button" class="btn btn-danger">Needed</button></td>
-                    <td><button type="button" class="btn btn-info">Details</button></td>
-                </tr>
-                <tr>
-                    <td>xxxxxxx</td>
-                    <td>xxxxxxx</td>
-                    <td>Category 1</td>
-                    <td>LKR 0000</td>
-                    <td>50</td>
-                    <td><button type="button" class="btn btn-danger">Needed</button></td>
-                    <td><button type="button" class="btn btn-info">Details</button></td>
-                </tr>
-                <tr>
-                    <td>xxxxxxx</td>
-                    <td>xxxxxxx</td>
-                    <td>Category 1</td>
-                    <td>LKR 0000</td>
-                    <td>50</td>
-                    <td><button type="button" class="btn btn-success">No Need</button></td>
-                    <td><button type="button" class="btn btn-info">Details</button></td>
-                </tr>
-                <tr>
-                    <td>xxxxxxx</td>
-                    <td>xxxxxxx</td>
-                    <td>Category 1</td>
-                    <td>LKR 0000</td>
-                    <td>50</td>
-                    <td><button type="button" class="btn btn-success">No Need</button></td>
-                    <td><button type="button" class="btn btn-info">Details</button></td>
-                </tr>
-                <tr>
-                    <td>xxxxxxx</td>
-                    <td>xxxxxxx</td>
-                    <td>Category 1</td>
-                    <td>LKR 0000</td>
-                    <td>50</td>
-                    <td><button type="button" class="btn btn-success">No Need</button></td>
-                    <td><button type="button" class="btn btn-info">Details</button></td>
-                </tr>
-                <tr>
-                    <td>xxxxxxx</td>
-                    <td>xxxxxxx</td>
-                    <td>Category 1</td>
-                    <td>LKR 0000</td>
-                    <td>50</td>
-                    <td><button type="button" class="btn btn-success">No Need</button></td>
-                    <td><button type="button" class="btn btn-info">Details</button></td>
-                </tr>
-                <tr>
-                    <td>xxxxxxx</td>
-                    <td>xxxxxxx</td>
-                    <td>Category 1</td>
-                    <td>LKR 0000</td>
-                    <td>50</td>
-                    <td><button type="button" class="btn btn-success">No Need</button></td>
-                    <td><button type="button" class="btn btn-info">Details</button></td>
-                </tr>
+                {% endfor %}
+                
                 
             </tbody>
         </table> 

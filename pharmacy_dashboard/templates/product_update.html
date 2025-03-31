@@ -1,0 +1,82 @@
+{% extends 'base_.html'%}
+{% block content %}
+<section>
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-lg-4 mt-5">
+                <div class="card mb-3">
+                    <img class="card-img img-fluid" src="{{product_update_form.instance.product_image.url}}" alt="Products">
+                    <a href="{% url 'remove_product' product_update_form.instance.product_id %}">
+                        <button type="button" class="btn btn-primary" style="background-color:red;border:none;width:100%;margin-top:5px">
+                            Delete Product
+                        </button>
+                    </a>
+                </div>
+                
+            </div>
+            <!-- col end -->
+            <div class="col-lg-8 mt-5">
+                <div class="card" style="padding:30px;">
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+                          <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Product Name</label>
+                            <div class="col-sm-10">
+                              <!--<input type="email" class="form-control" id="inputEmail3" placeholder="Email">-->
+                              {{product_update_form.product_name}}
+                            </div>
+                          </div>
+                
+                         <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Category</label>
+                            <div class="col-sm-10">
+                              {{product_update_form.category}}
+                            </div>
+                          </div>
+                
+                          <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Description</label>
+                            <div class="col-sm-10">
+                                {{product_update_form.description}}
+                            </div>
+                          </div>
+                
+                
+                          <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Price</label>
+                            <div class="col-sm-10">
+                                {{product_update_form.price}}
+                            </div>
+                          </div>
+                          
+                          <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Available Quantity</label>
+                            <div class="col-sm-10">
+                                {{product_update_form.available_quantity}}
+                            </div>
+                          </div>
+                
+                          <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Image</label>
+                            <div class="col-sm-10">
+                                {{product_update_form.product_image}}
+                            </div>
+                          </div>
+            
+                          <div class="form-group row">
+                              <label for="inputEmail3" class="col-sm-2 col-form-label">Is Prescription Needed ?</label>
+                                  <div class="col-sm-10">
+                                  {{product_update_form.is_prescription_needed}}
+                                  </div>
+                          </div>
+                
+                          <div class="form-group row">    
+                            <button type="submit" class="btn btn-primary" style="background-color: #15103c;" >Update Product</button>
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
