@@ -3,12 +3,7 @@
 
 
 <div class="card mb-4 p-3">
-    {% for message in messages %}
-    <div class="alert alert-success" role="alert">
-       {{message}}
-    </div>
-    {% endfor %}
-
+    
     <a href="{% url 'product_insert' %}" class="btn btn-primary btn-lg btn-block mb-4 mt-4">
         Enter New Product
     </a>

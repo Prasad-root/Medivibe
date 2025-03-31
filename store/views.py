@@ -9,3 +9,9 @@ def product_view(request,product_id):
         "product_id":product_id
     }
     return render(request,'product_view.html',context)
+
+def checkout(request):
+    return render(request,'checkout.html')
+
+def cart(request):
+    return render(request,'cart.html')

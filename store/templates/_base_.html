@@ -45,8 +45,7 @@
           <div class="main-nav d-none d-lg-block">
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li><a href="index.html">Home</a></li>
-                <li class="active"><a href="shop.html">Store</a></li>
+                <li class="active"><a href="{% url 'catelog' %}">Store</a></li>
                 <li class="has-children">
                   <a href="#">Categoties</a>
                   <ul class="dropdown">
@@ -72,8 +71,8 @@
           </div>
           <div class="icons">
             <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-            <a href="cart.html" class="icons-btn d-inline-block bag">
-              <span class="icon-shopping-bag"></span>
+            <a href="{% url 'cart' %}" class="icons-btn d-inline-block bag">
+              <img src="{% static 'images/cart.png' %}" alt="" style="max-width: 30px;margin-bottom: 10px;">
               <span class="number">2</span>
               
             </a>
