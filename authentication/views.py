@@ -23,7 +23,7 @@ def login_(request):
                 if user.is_staff:
                     return redirect('main_view') 
                 else:
-                    return redirect('home') 
+                    return redirect('drug_service') 
             else:
                 messages.error(request, 'error')
         else:
@@ -39,7 +39,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return HttpResponse("Store") 
+            return redirect("drug_service") 
     else:
         form = CustomUserRegistrationForm()
     return render(request, 'register.html', {'form': form})

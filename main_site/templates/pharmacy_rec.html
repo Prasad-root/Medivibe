@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block title %}MediVibe-Home{% endblock title%}
+{% load static %}
+
+
+{% block content %}
+<section class="container">
+    <h1>Recommended Pharmacies</h1><br><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Pharmacy Name</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Location</th>
+                <th scope="col">Visit Site</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pharmacy in pharmacies %}
+            <tr>
+                <td>{{ pharmacy.full_name }}</td>
+                <td>{{ pharmacy.contact_number }}</td>
+                <td>{{ pharmacy.location }}</td>
+                <td>
+                    <a href="{% url 'catelog'%}" class="btn btn-primary" target="_blank">Visit Site</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center">No recommended pharmacies available</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+{% endblock content %}
